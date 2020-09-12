@@ -147,4 +147,4 @@ order by
 	count(dept_name) desc
 ```
 
-![Retirement_ready_Count](/Retirement_ready_Count.PNG)
+![retirement_ready_count](/retirement_ready_count.png)
