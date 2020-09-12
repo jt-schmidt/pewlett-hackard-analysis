@@ -21,6 +21,7 @@ Original tables were:
 - titles
 
 With result ERD structure:
+
 ![EmployeeDB](/EmployeeDB.png)
 
 Using this database, 4 new tables were created to identify 
