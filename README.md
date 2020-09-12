@@ -108,7 +108,43 @@ The summary addresses the two questions and contains two additional queries or t
 ## Summary
 
 *Question 1:  How many roles will need to be filled as the "silver tsunami" begins to make an impact?*
+
 Consider adding an age calculation based on current timestamp:
+
 ![Age_Calculation](/Age_Calculation.png)
 
+This will allow us to then do a count of employees who are at or over retirement age of 65:
+
+![Retirement_Age_Count](/Retirement_Age_Count.PNG)
+
+This information can then be included during the construction of the RETIREMENT_TITLES table.
+
 *Question 2: Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?*
+
+```SQL
+select
+	count(dept_name),
+	dept_name
+from
+(select 
+	e.emp_no,
+	e.birth_date,
+	(current_date - e.birth_date) / 365 as AGE,
+	e.first_name,
+	e.last_name,
+	d.dept_name
+from 
+	employees e,
+	departments d,
+	dept_emp de
+where
+	e.emp_no = de.emp_no and
+	de.dept_no = d.dept_no and
+	e.birth_date BETWEEN '1965-01-01' AND '1965-12-31' ) a
+group by 
+	dept_name
+order by 
+	count(dept_name) desc
+```
+
+![Retirement_ready_Count](/Retirement_ready_Count.PNG)
