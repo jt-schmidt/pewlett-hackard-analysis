@@ -108,5 +108,7 @@ The summary addresses the two questions and contains two additional queries or t
 ## Summary
 
 *Question 1:  How many roles will need to be filled as the "silver tsunami" begins to make an impact?*
+Consider adding an age calculation based on current timestamp:
+![Age_Calculation](/Age_Calculation.png)
 
 *Question 2: Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?*
