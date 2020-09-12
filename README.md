@@ -11,17 +11,34 @@ Links to images are working and displayed correctly. (2 pt)
 The purpose of the new analysis is well defined. (3 pt)
 --->
 ## Overview
+This challenge was to utilize a set of 6 raw data sets to create a POSTGRESQL Employee database.  
+Original tables were:
+- departments
+- dept_emp
+- dept_manager
+- employees
+- salaries
+- titles
+
+With result ERD structure:
+![EmployeeDB](/EmployeeDB.png)
+
+Using this database, 4 new tables were created to identify 
+1. Titles of employees eligible for retirement (RETIREMENT_TITLES)
+2. Removal of duplication to identify current title (UNIQUE_TITLES)
+3. A count of titles retiring (RETIRING_TITLES)
+4. A list of employees eligible to be mentors (MENTORSHIP_ELIGIBILTY)
 
 <!---
 There is a bulleted list with four major points from the two analysis deliverables. (6 pt)
 --->
 ## Results
 
-- bullet1
-- bullet2
-- bullet3
-- bullet4
-![EmployeeDB](/EmployeeDB.png)
+SQL used to generate 4 new tables is shown below
+- RETIREMENT_TITLES & UNIQUE_TITLES could be simplified into single SQL statement with use of DISTINCT ON
+- For RETIRING_TITLES, it may be usefult to sum up these numbers by Month/Year to understand when retirements will take place.
+- MANAGERS could be joined with retirement summaries to identify where manpower resources will need to be replenished.
+- MENTORSHIP_ELIGIBILTY by creating a dynamic calculation using CURRENT_TIME instead of static identification of 1965
 
 ```SQL
 /* RETIREMENT_TITLES */
