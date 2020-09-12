@@ -23,6 +23,25 @@ There is a bulleted list with four major points from the two analysis deliverabl
 - bullet4
 ![EmployeeDB](/EmployeeDB.png)
 
+```SQL
+/* RETIREMENT_TITLES */
+select
+	e.emp_no, 
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date
+into retirement_titles
+from employees e
+inner join titles t on e.emp_no = t.emp_no
+where 
+	e.birth_date BETWEEN '1952-01-01' AND '1955-12-31'
+order by
+	e.emp_no
+```
+
+
 
 <!---
 The summary addresses the two questions and contains two additional queries or tables that may provide more insight. (5 pt)
