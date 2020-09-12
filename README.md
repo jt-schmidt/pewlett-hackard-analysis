@@ -121,6 +121,8 @@ This information can then be included during the construction of the RETIREMENT_
 
 *Question 2: Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?*
 
+Consider generating an overall employee summary table, filtering this for retirement age, then pulling count of employees by department from it as an answer to this question.  See below SQL and result:
+
 ```SQL
 select
 	count(dept_name),
